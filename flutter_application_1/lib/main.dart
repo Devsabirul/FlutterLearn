@@ -4,19 +4,19 @@ import 'pages/Homepage.dart';
 import 'pages/login_page.dart';
 
 void main() {
-  runApp(Myapp());
+  runApp(MyApp());
 }
 
-class Myapp extends StatelessWidget {
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: "Flutter Demo",
       debugShowCheckedModeBanner: false,
-      initialRoute: "/home",
-      theme: ThemeData(
-        fontFamily: GoogleFonts.lato().fontFamily,
-      ),
-      routes: {"/": (context) => LoginPage(), "/home": (context) => HomePage()},
+      theme: ThemeData(primarySwatch: Colors.blue),
+      routes: {"/": (context) => HomePage()},
     );
   }
 }

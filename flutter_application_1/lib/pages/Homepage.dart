@@ -3,17 +3,14 @@ import 'package:flutter/material.dart';
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("HomePage"),
+    return Scaffold(
+      appBar: AppBar(title: Text("Flutter Container")),
+      body: Center(
+        child: Container(
+          width: 200,
+          height: 200,
+          color: Color.fromARGB(255, 239, 255, 11),
         ),
-        body: Center(
-          child: Container(
-            child: const Text("HELLO This is my first App Ui"),
-          ),
-        ),
-        drawer: const Drawer(),
       ),
     );
   }
