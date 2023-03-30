@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'pages/Homepage.dart';
-import 'pages/login_page.dart';
+import 'pages/listview.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -16,7 +15,11 @@ class MyApp extends StatelessWidget {
       title: "Flutter Demo",
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.blue),
-      routes: {"/": (context) => HomePage()},
+      initialRoute: "/listview",
+      routes: {
+        "/": (context) => HomePage(),
+        "/listview": (context) => const ListView_(),
+      },
     );
   }
 }
