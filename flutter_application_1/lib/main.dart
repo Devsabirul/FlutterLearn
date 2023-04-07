@@ -4,6 +4,8 @@ import 'pages/listview.dart';
 import 'pages/decorationview.dart';
 import 'pages/uidesign.dart';
 import 'pages/appbar.dart';
+import 'pages/testapp.dart';
+import 'pages/uinew.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,14 +19,16 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "Flutter Demo",
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.blue),
-      initialRoute: "/appbar",
+      theme: ThemeData(primarySwatch: Colors.purple),
+      initialRoute: "/uinew",
       routes: {
         "/": (context) => HomePage(),
         "/listview": (context) => const ListView_(),
         "/decoration": (context) => const DecorationView(),
         "/simpleui": (context) => const SimpleUi(),
-        "/appbar": (context) => const AppBar_()
+        "/appbar": (context) => const AppBar_(),
+        "/testui": (context) => const TestUi(),
+        "/uinew": (context) => const ResUi(),
       },
     );
   }

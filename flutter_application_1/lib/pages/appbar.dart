@@ -5,6 +5,21 @@ class AppBar_ extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var Images = [
+      'https://imgv3.fotor.com/images/blog-cover-image/part-blurry-image.jpg',
+      'https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8&w=1000&q=80',
+      'https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg',
+      'https://imgv3.fotor.com/images/blog-cover-image/part-blurry-image.jpg',
+      'https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8&w=1000&q=80',
+      'https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg',
+      'https://imgv3.fotor.com/images/blog-cover-image/part-blurry-image.jpg',
+      'https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8&w=1000&q=80',
+      'https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg',
+      'https://imgv3.fotor.com/images/blog-cover-image/part-blurry-image.jpg',
+      'https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8&w=1000&q=80',
+      'https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg',
+    ];
+
     return Scaffold(
       appBar: AppBar(
         // leading: const Icon(
@@ -47,10 +62,25 @@ class AppBar_ extends StatelessWidget {
         elevation: 10,
         toolbarHeight: 70,
       ),
-      body: const SafeArea(
-          child: Center(
-        child: Text("Welcome to Arohi's Studio"),
-      )),
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(5.0),
+          child: GridView.builder(
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+            ),
+            itemBuilder: (context, index) {
+              return Card(
+                child: Image.network(
+                  Images[index],
+                  fit: BoxFit.cover,
+                ),
+              );
+            },
+            itemCount: Images.length,
+          ),
+        ),
+      ),
       drawer: const Drawer(),
       bottomNavigationBar:
           BottomNavigationBar(items: const <BottomNavigationBarItem>[
